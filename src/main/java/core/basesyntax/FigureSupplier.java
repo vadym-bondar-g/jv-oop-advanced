@@ -3,16 +3,40 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
-    private static Random random = new Random();
+    private static Random rnd = new Random();
+    private static ColorSupplier colorSupplier = new ColorSupplier();
 
     public static Figure getRandomFigure() {
-        return switch (random.nextInt(5)) {
-            case 0 -> new Circle(random.nextDouble());
-            case 1 -> new Square(random.nextDouble());
-            case 2 -> new Rectangle(random.nextDouble(), random.nextDouble());
-            case 3 -> new RightTriangle(random.nextDouble(), random.nextDouble());
-            case 4 -> new IsoscelesTrapezoid(random.nextDouble(),  random.nextDouble(), random.nextDouble());
-            default -> null;
+        return switch (rnd.nextInt(5)) {
+            case 0 -> {
+                double width = rnd.nextDouble(1.0,10.0);
+                double height = rnd.nextDouble(1.0,10.0);
+                Color color = colorSupplier.getRandomColor();
+                yield new Rectangle(width, height, color);
+            }
+            case 1 -> {
+                double firstLeg = rnd.nextDouble(1.0,10.0);
+                double secondLeg = rnd.nextDouble(1.0,10.0);
+                Color color = colorSupplier.getRandomColor();
+                yield new RightTriangle(firstLeg, secondLeg, color);
+            }
+            case 2 -> {
+                double radius = rnd.nextDouble(1.0,10.0);
+                Color color = colorSupplier.getRandomColor();
+                yield new Circle(radius, color);
+            }
+            case 3 -> {
+                double side = rnd.nextDouble(1.0,10.0);
+                Color color = colorSupplier.getRandomColor();
+                yield new Square(side, color);
+            }
+            default -> {
+                double firstBase = rnd.nextDouble(1.0,10.0);
+                double secondBase = rnd.nextDouble(1.0,10.0);
+                double height = rnd.nextDouble(1.0,10.0);
+                Color color = colorSupplier.getRandomColor();
+                yield new IsoscelesTrapezoid(firstBase, secondBase, height, color);
+            }
         };
     }
 }

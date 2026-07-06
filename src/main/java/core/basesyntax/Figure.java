@@ -1,6 +1,7 @@
 package core.basesyntax;
 
-public abstract class Figure implements Drawable, AreaMeasurable {
-    private String color;
+public interface Figure extends Drawable, AreaMeasurable {
+    Color color = null;
+
 
 }
