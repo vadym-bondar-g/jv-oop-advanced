@@ -1,17 +1,16 @@
 package core.basesyntax;
 
-public class IsoscelesTrapezoid implements Figure {
+public class IsoscelesTrapezoid extends Figure {
 
     private double firstBase;
     private double secondBase;
     private double height;
-    private Color color;
 
     public IsoscelesTrapezoid(double firstBase, double secondBase, double height, Color color) {
+        super(color);
         this.firstBase = firstBase;
         this.secondBase = secondBase;
         this.height = height;
-        this.color = color;
     }
 
     @Override
@@ -30,6 +29,6 @@ public class IsoscelesTrapezoid implements Figure {
                 + " units, height: "
                 + height
                 + " units, color: "
-                + color);
+                + getColor());
     }
 }

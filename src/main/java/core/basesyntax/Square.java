@@ -1,12 +1,11 @@
 package core.basesyntax;
 
-public class Square implements Figure {
+public class Square extends Figure {
     private double side;
-    private Color color;
 
     public Square(double side, Color color) {
+        super(color);
         this.side = side;
-        this.color = color;
     }
 
     @Override
@@ -21,6 +20,6 @@ public class Square implements Figure {
                 + " sq. units, side: "
                 + side
                 + " units, color: "
-                + color);
+                + getColor());
     }
 }

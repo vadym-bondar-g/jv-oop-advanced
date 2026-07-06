@@ -1,15 +1,14 @@
 package core.basesyntax;
 
-public class Rectangle implements Figure {
+public class Rectangle extends Figure {
 
     private double width;
     private double height;
-    private Color color;
 
     public Rectangle(double width, double height, Color color) {
+        super(color);
         this.width = width;
         this.height = height;
-        this.color = color;
     }
 
     @Override
@@ -26,6 +25,6 @@ public class Rectangle implements Figure {
                 + " units, height: "
                 + height
                 + " units, color: "
-                + color);
+                + getColor());
     }
 }
