@@ -5,10 +5,10 @@ import java.util.Random;
 public class FigureSupplier {
     private final Random rnd = new Random();
     private final ColorSupplier colorSupplier = new ColorSupplier();
-    private final int FIGURE_COUNT = 5;
+    private final int figureCount = 5;
 
     public Figure getRandomFigure() {
-        return switch (rnd.nextInt(FIGURE_COUNT)) {
+        return switch (rnd.nextInt(figureCount)) {
             case 0 -> {
                 double width = rnd.nextDouble(1.0, 10.0);
                 double height = rnd.nextDouble(1.0, 10.0);
