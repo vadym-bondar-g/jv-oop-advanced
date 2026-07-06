@@ -1,6 +1,5 @@
 package core.basesyntax;
 
-
 public class Rectangle implements Figure {
 
     private double width;
