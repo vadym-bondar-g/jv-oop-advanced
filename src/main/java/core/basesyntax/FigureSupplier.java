@@ -3,10 +3,10 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
-    private static Random rnd = new Random();
-    private static ColorSupplier colorSupplier = new ColorSupplier();
+    private final Random rnd = new Random();
+    private final ColorSupplier colorSupplier = new ColorSupplier();
 
-    public static Figure getRandomFigure() {
+    public  Figure getRandomFigure() {
         return switch (rnd.nextInt(5)) {
             case 0 -> {
                 double width = rnd.nextDouble(1.0,10.0);

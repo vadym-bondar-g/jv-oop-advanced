@@ -5,12 +5,14 @@ package core.basesyntax;
  */
 public class Main {
     public static void main(String[] args) {
+        FigureSupplier figureSupplier = new FigureSupplier();
         Figure[] figures = new Figure[]{
-                FigureSupplier.getRandomFigure(),
-                FigureSupplier.getRandomFigure(),
-                FigureSupplier.getRandomFigure(),
-                FigureSupplier.getRandomFigure(),
-                FigureSupplier.getRandomFigure(),
+                figureSupplier.getRandomFigure(),
+                figureSupplier.getRandomFigure(),
+                figureSupplier.getRandomFigure(),
+                figureSupplier.getRandomFigure(),
+                figureSupplier.getRandomFigure(),
+                figureSupplier.getRandomFigure(),
         };
         for (Figure figure : figures) {
             figure.draw();

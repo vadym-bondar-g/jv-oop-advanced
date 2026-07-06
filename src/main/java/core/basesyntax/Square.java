@@ -6,6 +6,7 @@ public class Square implements Figure {
 
     public Square(double side, Color color) {
         this.side = side;
+        this.color = color;
     }
 
     @Override
